@@ -1,4 +1,3 @@
 export const Titulo = () => {
-
-    return (<><h1>Titulo</h1></>)
+    return (<><h1>Notes manager</h1></>)
 }
