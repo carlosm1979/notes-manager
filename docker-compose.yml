@@ -1,16 +1,17 @@
 version: '2'
 services:
-  web:
+  base:
     build: .
-    command: npm start
     volumes:
       - .:/app/
       - /app/node_modules
+  web:
+    extends:
+      service: base
+    command: npm start
     ports:
       - "3000:3000"
   test:
-    build: .
+    extends:
+      service: base
     command: npm test
-    volumes:
-      - .:/app/
-      - /app/node_modules
