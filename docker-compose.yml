@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: npm start
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+  test:
+    build: .
+    command: npm test
+    volumes:
+      - .:/app/
+      - /app/node_modules
